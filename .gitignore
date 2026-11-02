@@ -1,0 +1,5 @@
+node_modules/
+server/blog.sqlite
+server/blog.sqlite-shm
+server/blog.sqlite-wal
+.env

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Quill & Co. — thoughtful ideas for curious minds." />
+  <title>Quill & Co. — A quieter place for good ideas</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="page-shell">
+    <header class="site-header">
+      <a class="brand" href="#" aria-label="Quill and Co. home">
+        <span class="brand-mark">Q</span>
+        <span>quill<span class="brand-amp">&</span>co.</span>
+      </a>
+      <nav class="desktop-nav" id="desktopNav" aria-label="Primary navigation">
+        <a href="#discover">Discover</a>
+        <a href="#topics">Topics</a>
+        <a href="#about">About us</a>
+      </nav>
+      <div class="header-actions">
+        <button class="icon-button mobile-menu-btn" id="mobileMenuButton" aria-label="Open menu">☰</button>
+        <button class="button button-ghost" id="loginButton">Log in</button>
+        <button class="button button-dark" id="signupButton">Start writing <span>↗</span></button>
+        <button class="avatar-button hidden" id="profileButton" aria-label="Open profile menu">AR</button>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero" id="discover">
+        <div class="hero-copy">
+          <div class="eyebrow"><span class="eyebrow-dot"></span> Ideas worth sharing</div>
+          <h1>A quieter place for <em>good ideas.</em></h1>
+          <p>Quill & Co. is a home for curious people to read deeply, share openly, and connect over the things that matter.</p>
+          <div class="hero-actions">
+            <button class="button button-dark button-large" id="heroStartButton">Start writing <span>↗</span></button>
+            <a class="text-link" href="#featured">Explore stories <span>↓</span></a>
+          </div>
+        </div>
+        <div class="hero-art" aria-hidden="true">
+          <div class="sun"></div>
+          <div class="hill hill-back"></div>
+          <div class="hill hill-front"></div>
+          <div class="hero-card">
+            <span class="card-label">Editor's note</span>
+            <p>“Attention is the beginning of devotion.”</p>
+            <span class="card-author">— Mary Oliver</span>
+          </div>
+          <div class="art-leaf leaf-one"></div>
+          <div class="art-leaf leaf-two"></div>
+          <div class="art-stem"></div>
+        </div>
+      </section>
+
+      <section class="topic-strip" id="topics">
+        <div class="topic-heading">Explore by topic</div>
+        <div class="topic-list" id="topicList">
+          <button class="topic-chip active" data-category="All">All stories</button>
+          <button class="topic-chip" data-category="Mindset">Mindset</button>
+          <button class="topic-chip" data-category="Creativity">Creativity</button>
+          <button class="topic-chip" data-category="Culture">Culture</button>
+          <button class="topic-chip" data-category="Work">Work & life</button>
+        </div>
+        <label class="search-box">
+          <span>⌕</span>
+          <input id="searchInput" type="search" placeholder="Search stories" aria-label="Search stories" />
+        </label>
+      </section>
+
+      <section class="content-section" id="featured">
+        <div class="section-heading">
+          <div>
+            <div class="eyebrow">Handpicked for you</div>
+            <h2>Featured stories</h2>
+          </div>
+          <a class="text-link" href="#allStories">View all stories <span>→</span></a>
+        </div>
+        <div class="featured-grid" id="featuredGrid"></div>
+      </section>
+
+      <section class="content-section latest-section" id="allStories">
+        <div class="section-heading">
+          <div>
+            <div class="eyebrow">Fresh from the community</div>
+            <h2>Latest stories</h2>
+          </div>
+          <span class="story-count" id="storyCount"></span>
+        </div>
+        <div class="latest-layout">
+          <div class="story-list" id="storyList"></div>
+          <aside class="join-card" id="about">
+            <div class="join-decoration">✦</div>
+            <div class="eyebrow">Find your people</div>
+            <h3>Good conversations start with a good question.</h3>
+            <p>Join thousands of thoughtful readers and writers building a more considered internet.</p>
+            <button class="button button-dark" id="joinButton">Join the community <span>↗</span></button>
+          </aside>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-brand"><span class="brand-mark">Q</span><strong>quill<span class="brand-amp">&</span>co.</strong></div>
+      <p>Made for people who still have questions.</p>
+      <div class="footer-links"><a href="#">Privacy</a><a href="#">Guidelines</a><a href="#">Contact</a></div>
+    </footer>
+  </div>
+
+  <div class="modal-backdrop" id="authModal" aria-hidden="true">
+    <section class="modal auth-modal" role="dialog" aria-modal="true" aria-labelledby="authTitle">
+      <button class="modal-close" data-close-modal aria-label="Close dialog">×</button>
+      <div class="modal-kicker">Welcome to Quill & Co.</div>
+      <h2 id="authTitle">Make space for<br /><em>good ideas.</em></h2>
+      <p class="modal-intro" id="authIntro">Create an account to join the conversation, save stories, and start writing.</p>
+      <div class="auth-tabs"><button class="auth-tab active" data-auth-mode="signup">Create account</button><button class="auth-tab" data-auth-mode="login">Log in</button></div>
+      <form id="authForm">
+        <label>Full name<input id="nameField" type="text" placeholder="Your name" required /></label>
+        <label>Email address<input type="email" placeholder="you@example.com" required /></label>
+        <label>Password<input type="password" placeholder="At least 8 characters" minlength="8" required /></label>
+        <button class="button button-dark button-full" type="submit" id="authSubmit">Create my account <span>↗</span></button>
+      </form>
+      <p class="form-note">By continuing, you agree to our community guidelines.</p>
+    </section>
+  </div>
+
+  <div class="modal-backdrop" id="editorModal" aria-hidden="true">
+    <section class="modal editor-modal" role="dialog" aria-modal="true" aria-labelledby="editorTitle">
+      <button class="modal-close" data-close-modal aria-label="Close dialog">×</button>
+      <div class="modal-kicker">Your corner of the internet</div>
+      <h2 id="editorTitle">What’s on your <em>mind?</em></h2>
+      <form id="postForm">
+        <label>Story title<input id="postTitle" type="text" placeholder="Give your story a title" required /></label>
+        <label>Topic<select id="postCategory"><option>Mindset</option><option>Creativity</option><option>Culture</option><option>Work</option></select></label>
+        <label>Your story<textarea id="postBody" rows="6" placeholder="Start writing..." required></textarea></label>
+        <div class="editor-footer"><span class="form-note">A thoughtful title goes a long way.</span><button class="button button-dark" type="submit">Publish story <span>↗</span></button></div>
+      </form>
+    </section>
+  </div>
+
+  <div class="modal-backdrop" id="readModal" aria-hidden="true">
+    <section class="modal read-modal" role="dialog" aria-modal="true" aria-labelledby="readTitle">
+      <button class="modal-close" data-close-modal aria-label="Close dialog">×</button>
+      <div id="readContent"></div>
+    </section>
+  </div>
+  <div class="toast" id="toast" role="status"></div>
+  <script src="app.js"></script>
+</body>
+</html>
